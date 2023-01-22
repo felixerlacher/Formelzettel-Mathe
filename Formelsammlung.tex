@@ -17,8 +17,12 @@
 \usepackage{ifthen}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{bm}
 \usepackage[landscape]{geometry}
 \usepackage[colorlinks=true,citecolor=blue,linkcolor=blue]{hyperref}
+\usepackage{svg}
+
+
 
 
 \ifthenelse{\lengthtest { \paperwidth = 11in}}
@@ -61,6 +65,13 @@
     \setlength{\multicolsep}{1pt}
     \setlength{\columnsep}{1pt}
 
+    \section{Allgemeines}
+    \includegraphics[width=0.1\textwidth]{figures/trig_einheitskreis.png}
+    \includegraphics[width=0.12\textwidth]{figures/einheitskreiswinkel.png}
+
+
+
+
     \section{Vektoren}
     \subsection{Inneres Produkt / Skalarprodukt}
     \begin{tblr}
@@ -69,29 +80,32 @@
             rowsep  = {5pt},
             colsep  = {2pt},
         }
-        \textbf{$\mathbb{R}$}         & $<\vec{a},\vec{b}> = \sum_{i = 1}^{n} = a_i b_i$                                                          \\
-        \textbf{$\mathbb{C}$}         & $<\vec{a},\vec{b}> = \sum_{i = 1}^{n} = a_i b_i$                                                          \\
-        \textbf{Positivität:}         & $<\vec{a},\vec{b}> \geq 0$                                                                                \\
-                                      & a = 0 oder b = 0 $\rightarrow$ $<\vec{a},\vec{b}> = 0$                                                    \\
-        \textbf{Symmetrie:}           & $<\vec{a},\vec{b}> = <\vec{b},\vec{a}>$ für $\mathbb{R}$                                                  \\
-                                      & $<\vec{a},\vec{b}> = <\overline{\vec{b},\vec{a}}>$ für $\mathbb{C}$                                       \\
-        \textbf{Linearität:}          & $<\vec{a},\textit{k}\vec{b}+\textit{h}\vec{c}> = \textit{k}<\vec{a},\vec{b}>+\textit{h}<\vec{a},\vec{c}>$ \\
-        \textbf{Normalisierung:}      & $<\vec{a},\vec{a}> = ||\vec{a}||^2$                                                                       \\
-                                      & \includegraphics[width=0.1\textwidth]{figures/cosskalar.png}                                              \\
-        \textbf{Matrix $\mathbb{R}$}  & $<\vec{a},\textit{A}\vec{b}> = <\textit{A}^T\vec{a},\vec{b}>$                                             \\
-        \textbf{Matrix $\mathbb{C}$}  & $<\vec{a},\textit{A}\vec{b}> = <\overline{\textit{A}^T}\vec{a},\vec{b}>$                                  \\
-        \textbf{Orthogonalität:}      & $<\vec{a},\vec{b}> = 0$ man schreibt $\vec{a} \perp \vec{b}$                                              \\
-        \textbf{Parallelität:}        & $\vec{a} =\textit{k}\vec{b}$ oder $\vec{b} =\textit{k}\vec{a}$                                            \\
-        \textbf{Winkel:}              & $<\vec{a},\vec{b}> = ||\vec{a}|| ||\vec{b}|| \cos(\alpha)$                                                \\
-                                      & $\cos(\alpha) = 0$ $\alpha = 90°$ für  $\vec{a} \perp \vec{b}$                                            \\
-        \textbf{Pythagoras:}          & $||\vec{a}||^2 + ||\vec{b}||^2 = ||\vec{a}+\vec{b}||^2$ für  $\vec{a} \perp \vec{b}$                      \\
-        \textbf{Zerlegung}            & $\vec{a} = \vec{a}_{\perp}$ + $\vec{a}_{\parallel}$                                                       \\
-                                      & \includegraphics[width=0.1\textwidth]{figures/components.png}                                             \\
-        \textbf{Einheitsvektor}       & $\vec{a}_{\parallel} = <\vec{e},\vec{a}> \vec{e}$                                                         \\
-                                      & $\vec{a}_{\perp} = \vec{a} - <\vec{e},\vec{a}> \vec{e}$                                                   \\
-        \textbf{Cauchy-Schwarz:}      & $||\vec{a}|| ||\vec{b}|| \geq <\vec{a},\vec{b}>$                                                          \\
-                                      & gleich wenn $\vec{a} \perp \vec{b}$                                                                       \\
-        \textbf{Einheitsnormalvektor} & $||\vec{n_0}|| = \frac{\vec{n}}{||\vec{n}||}$                                                             \\
+        \textbf{$\mathbb{R}$}           & $<\vec{a},\vec{b}> = \sum_{i = 1}^{n} = a_i b_i$                                                          \\
+        \textbf{$\mathbb{C}$}           & $<\vec{a},\vec{b}> = \sum_{i = 1}^{n} = a_i b_i$                                                          \\
+        \textbf{Positivität:}           & $<\vec{a},\vec{b}> \geq 0$                                                                                \\
+                                        & a = 0 oder b = 0 $\rightarrow$ $<\vec{a},\vec{b}> = 0$                                                    \\
+        \textbf{Symmetrie:}             & $<\vec{a},\vec{b}> = <\vec{b},\vec{a}>$ für $\mathbb{R}$                                                  \\
+                                        & $<\vec{a},\vec{b}> = <\overline{\vec{b},\vec{a}}>$ für $\mathbb{C}$                                       \\
+        \textbf{Linearität:}            & $<\vec{a},\textit{k}\vec{b}+\textit{h}\vec{c}> = \textit{k}<\vec{a},\vec{b}>+\textit{h}<\vec{a},\vec{c}>$ \\
+        \textbf{Normalisierung:}        & $<\vec{a},\vec{a}> = ||\vec{a}||^2$                                                                       \\
+                                        & \includegraphics[width=0.1\textwidth]{figures/cosskalar.png}                                              \\
+        \textbf{Matrix $\mathbb{R}$}    & $<\vec{a},\textit{A}\vec{b}> = <\textit{A}^T\vec{a},\vec{b}>$                                             \\
+        \textbf{Matrix $\mathbb{C}$}    & $<\vec{a},\textit{A}\vec{b}> = <\overline{\textit{A}^T}\vec{a},\vec{b}>$                                  \\
+        \textbf{Orthogonalität:}        & $<\vec{a},\vec{b}> = 0$ man schreibt $\vec{a} \perp \vec{b}$                                              \\
+        \textbf{Parallelität:}          & $\vec{a} =\textit{k}\vec{b}$ oder $\vec{b} =\textit{k}\vec{a}$                                            \\
+        \textbf{Winkel:}                & $<\vec{a},\vec{b}> = ||\vec{a}|| ||\vec{b}|| \cos(\alpha)$                                                \\
+                                        & $\cos(\alpha) = 0$ $\alpha = 90°$ für  $\vec{a} \perp \vec{b}$                                            \\
+        \textbf{Pythagoras:}            & $||\vec{a}||^2 + ||\vec{b}||^2 = ||\vec{a}+\vec{b}||^2$ für  $\vec{a} \perp \vec{b}$                      \\
+        \textbf{Zerlegung}              & $\vec{a} = \vec{a}_{\perp}$ + $\vec{a}_{\parallel}$                                                       \\
+                                        & \includegraphics[width=0.1\textwidth]{figures/components.png}                                             \\
+        \textbf{Einheitsvektor}         & $\vec{a}_{\parallel} = <\vec{e},\vec{a}> \vec{e}$                                                         \\
+
+                                        & $\vec{a}_{\perp} = \vec{a} - <\vec{e},\vec{a}> \vec{e}$                                                   \\
+        \textbf{orthogonale Projektion} & $\vec{a}_{\parallel} = \vec{a}_{\vec{b}} = \frac{<\vec{a},\vec{b}>}{||\vec{b}||^2}\vec{b}$                                      \\
+
+        \textbf{Cauchy-Schwarz:}        & $||\vec{a}|| ||\vec{b}|| \geq <\vec{a},\vec{b}>$                                                          \\
+                                        & gleich wenn $\vec{a} \perp \vec{b}$                                                                       \\
+        \textbf{Einheitsnormalvektor}   & $\vec{e} = \frac{\vec{u}}{||\vec{u}||}$                                                                   \\
     \end{tblr}
 
     \subsection{Normalvektor}
@@ -113,11 +127,11 @@
     \includegraphics[width=0.17\textwidth]{figures/kreuzprodukt.png}\\
     \subsubsection{Regeln für $\vec{a},\vec{b} \in \mathbb{R}^3$ und $\textit{k,h} \in \mathbb{R}$}
     \begin{align*}
-        \vec{a} \times \vec{b}                          & = -\vec{b} \times \vec{a} \\
-        (\textit{k}\vec{a}) \times \vec{b}               & = \textit{k}(\vec{a} \times \vec{b}) \\
-        (\textit{k}\vec{a}+\textit{h}\vec{b}) \times \vec{c} & = \textit{k}(\vec{a} \times \vec{c}) + \textit{h}(\vec{b} \times \vec{c}) \\
+        \vec{a} \times \vec{b}                                 & = -\vec{b} \times \vec{a}                                                 \\
+        (\textit{k}\vec{a}) \times \vec{b}                     & = \textit{k}(\vec{a} \times \vec{b})                                      \\
+        (\textit{k}\vec{a}+\textit{h}\vec{b}) \times \vec{c}   & = \textit{k}(\vec{a} \times \vec{c}) + \textit{h}(\vec{b} \times \vec{c}) \\
         \vec{a} \times (\textit{k}\vec{b} + \textit{h}\vec{c}) & = \textit{k}(\vec{a} \times \vec{b}) + \textit{h}(\vec{a} \times \vec{c}) \\
-        ||\vec{a} \times \vec{b}||                      & = ||\vec{a}|| ||\vec{b}|| \sin(\alpha) \\
+        ||\vec{a} \times \vec{b}||                             & = ||\vec{a}|| ||\vec{b}|| \sin(\alpha)                                    \\
     \end{align*}
     wobei $\alpha$ der Winkel zwischen $\vec{a}$ und $\vec{b}$ ist
 
@@ -125,15 +139,52 @@
 
 
 
-    \subsection{Orthogonalentwicklung}
-    \[<\vec{a},\vec{b}> = \frac{<\vec{a},\vec{b}>}{||\vec{b}||^2}\vec{b}\]
-    Wenn $||b||$ = 1, dann ist das Ergebnis
-    \[<\vec{a},\vec{b}> = <\vec{a},\vec{b}> \vec{b}\]
+    \subsection{Orthonormalsystem}
+    \subsubsection{Orthogonalbasis}
+    wenn $\vec{u}_i$ linear unabhängig und $\vec{u}_i \perp \vec{u}_j$ für $i \neq j$
+    \subsubsection{Orthonormalbasis}
+    $||\vec{u}_i|| = 1$ für $i = 1,2,...,n$\\
+    \[\vec{a} = \sum_{i=1}^n <\vec{a},\vec{u}_i>\vec{u}_i\]
 
-    \[<\vec{a}_{\perp},\vec{b}> = 0\]
+
+
+    \subsection{Orthogonale Transformationen}
+
+
+
+
+
 
 
     \section{Matrix}
+    \subsection{Determinante}
+    Regel von Sarrus
+    \[det(A) = \begin{vmatrix}a & b & c \\ d & e & f \\ g & h & i \end{vmatrix}=\]
+    \[= aei + bfg + cdh - ceg - bdi - afh\]
+    \subsection{Matrix transformieren}
+    \[A^{-1} = \frac{1}{\text{det}(A)}\begin{vmatrix}a_{11} & a_{12} & . & a_{1n} \\ a_{21} & a_{22} & . & a_{2n} \\ . & . & . & . \\ a_{n1} & a_{n2} & . & a_{nn} \end{vmatrix}\]
+    \subsection{Transponierte}
+
+    \[A^{T}_{ij} = A_{ji}\]
+    \subsection{symmetrisch -  an der Hauptachse gespiegelt}
+    \[A^{T} = A\]
+    \[(A^{T})^{T} = A\]
+    \subsection{Orthogonale Matrix}
+    Wenn $A$ eine quadratische Matrix ist, dann ist $A$ orthogonal, wenn $A^T = A^{-1}$\\
+
+    %\subsection{Rotationsmatrix im Uhrzeigersinn/gegen Uhrzeigersinn $\mathbb{R}^2$ im & $\mathbb{R}^3$}
+    \subsection{Rotationsmatrix im Uhrzeigersinn/gegen Uhrzeigersinn $\mathbb{R}^2$ im $\mathbb{R}^3$}
+    \[R_x(\alpha) = \begin{pmatrix}1 & 0 & 0 \\ 0 & \bm{\cos(\alpha)} & \bm{\pm\sin(\alpha)} \\ 0 & \bm{\mp\sin(\alpha)} & \bm{\cos(\alpha)} \end{pmatrix}\]
+    \[R_y(\alpha) = \begin{pmatrix}\bm{\cos(\alpha)} & 0 & \bm{\pm\sin(\alpha)} \\ 0 & 1 & 0 \\ \bm{\mp\sin(\alpha)} & 0 & \bm{\cos(\alpha)} \end{pmatrix}\]
+    \[R_z(\alpha) = \begin{pmatrix}\bm{\cos(\alpha)} & \bm{\mp\sin(\alpha)} & 0 \\ \bm{\pm\sin(\alpha)} & \bm{\cos(\alpha)} & 0 \\ 0 & 0 & 1 \end{pmatrix}\]
+
+    \subsection{Eigenwerte und Eigenvektoren}
+    \subsubsection{Charakteristisches Polynom}
+    \[\chi_A(\lambda) = \text{det}(A-\lambda \mathds{1})\stackrel{!}{=}0\] 
+    \[\chi_A(\lambda) = \pm(\lambda - \lambda_1)(\lambda - \lambda_2)...(\lambda - \lambda_n)\] n...allgebraische Vielfachheit, + bei n gerade, - bei n ungerade\\
+    \subsubsection{Diagonalisierbarkeit}
+    Wenn $\chi_A(\lambda) = 0$ dann ist $A$ diagonalisierbar\\
+
     \subsection{Lineare Abbildungen von Matritzen}
     m x n - Matrix -> m Zeilen n Spalten
     V,W...Vektorräume über $\mathbb{R}$ bzw. $\mathbb{C}$
@@ -142,9 +193,6 @@
     \[f(\vec{x})=\begin{pmatrix}x_1\\x_2\\ \vdots \\x_n\end{pmatrix}=\begin{pmatrix}a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n\\a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n\\\vdots\\\vdots\\a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n\end{pmatrix}\]=\[\begin{pmatrix}a_{11} & a_{12} & \cdots & a_{1n}\\a_{21} & a_{22} & \cdots & a_{2n}\\\vdots & \vdots & \ddots & \vdots\\a_{m1} & a_{m2} & \cdots & a_{mn}\end{pmatrix}\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix}\]
     \[f(\vec{x})=A\vec{x}\] jede Abbildungen $\vec{x} \rightarrow A\vec{x}$ heißt lineare Abbildung
 
-    \subsection{Matrix transformieren}
-    Um eine Matrix zu transformieren
-    \[A=\begin{pmatrix}a_{11} & a_{12} & \cdots & a_{1n}\\a_{21} & a_{22} & \cdots & a_{2n}\\\vdots & \vdots & \ddots & \vdots\\a_{m1} & a_{m2} & \cdots & a_{mn}\end{pmatrix}\]
 
     \subsection{Einheitsmatrix}
     \[\mathds{1}=E=\begin{pmatrix}1 & 0 & \cdots & 0\\0 & 1 & \cdots & 0\\\vdots & \vdots & \ddots & \vdots\\0 & 0 & \cdots & 1\end{pmatrix}\]
@@ -154,6 +202,10 @@
     \subsection{Quadratische Gleichungen}
     \[ax^2+bx+c=0\]
     \[x_{1,2}= \frac{ -b \pm \sqrt{b^2-4ac}}{2a} \]
+    \[x_{1,2}= -\frac{p}{2} \pm \frac{q}{2} \]
+
+    \subsection{Hesse Matrix}
+
 
 
 
